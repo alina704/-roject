@@ -32,16 +32,22 @@ namespace Massiv
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
-                textBox1.Show();
-            else textBox1.Hide();
+            
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked == true)
-                textBox2.Show();
-            else textBox2.Hide();
+           
+        }
+
+        private void главноеМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void канепрголToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
