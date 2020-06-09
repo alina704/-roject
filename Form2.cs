@@ -17,7 +17,7 @@ namespace Massiv
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // переход на главную форму
         {
             Form2.ActiveForm.Hide();
 
@@ -40,7 +40,7 @@ namespace Massiv
            
         }
 
-        private void главноеМенюToolStripMenuItem_Click(object sender, EventArgs e)
+        private void главноеМенюToolStripMenuItem_Click(object sender, EventArgs e)// справка и примечание разработчика
         {
 
         }

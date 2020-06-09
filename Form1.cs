@@ -38,16 +38,16 @@ namespace Massiv
             {
                 StreamReader f = new StreamReader(@"C:\\file.txt");
 
-                string[] a = f.ReadToEnd().Split('\n');
+                string[] a = f.ReadToEnd().Split('\n'); // чтение данных из файла
                 for (int i = 0; i < 25; i++)
                 {
-                    dataGridView1.Rows[0].Cells[i].Value = a[i];
-                    mas[i] = Convert.ToInt32(a[i]);
+                    dataGridView1.Rows[0].Cells[i].Value = a[i]; // заполнение ячеек
+                    mas[i] = Convert.ToInt32(a[i]); // заполнение массива
                 }
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Файл не найден!");
+                MessageBox.Show("Файл не найден!"); // исключение при отсутствии файла
             }
         }
 
@@ -55,7 +55,7 @@ namespace Massiv
         {
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 dataGridView1.Rows[0].Cells[i].Value = "";
-            label2.Text = "";
+            label2.Text = ""; // очистка метки
 
 
 
@@ -66,33 +66,33 @@ namespace Massiv
         {
             Array.Sort(mas);
             for (int i = 0; i < mas.Length; i++)
-                dataGridView1.Rows[0].Cells[i].Value = mas[i];
+                dataGridView1.Rows[0].Cells[i].Value = mas[i]; //заполнение ячеек
         }
 
         private void button2_Click_1(object sender, EventArgs e) // график
         {
-            int[] x = mas;
-            int[] y = new int[25];
+            int[] x = mas; // данные по оси Х
+            int[] y = new int[25]; // данные по оси У
             for (int i = 0; i < 25; i++)
             {
                 y[i] = mas[i];
-                x[i] = i;
-                diagramma.ChartAreas[0].AxisY.MajorGrid.Interval = 1;
-                diagramma.ChartAreas[0].AxisX.MajorGrid.Interval = 2;
-                diagramma.Series[0].Points.DataBindXY(x, y);
+                x[i] = i; 
+                diagramma.ChartAreas[0].AxisY.MajorGrid.Interval = 1; // интервал по оси У
+                diagramma.ChartAreas[0].AxisX.MajorGrid.Interval = 2; // интервал по оси Х
+                diagramma.Series[0].Points.DataBindXY(x, y); // построение графика
             }
         }
 
         private void off_Click(object sender, EventArgs e) // завершение работы
         {
             if (MessageBox.Show("Вы уверены?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                this.Close();
+                this.Close(); // диалоговое окно с подтверждением о закрытии программы
         }
 
         private void rand_Click(object sender, EventArgs e) // рандомное заполнение массива
         {
-            dataGridView1.ColumnCount = 25;
-            Random rnd = new Random();
+            dataGridView1.ColumnCount = 25; // колличество столбцов
+            Random rnd = new Random(); // рандом
             for (int i = 0; i < mas.Length; i++)
             {
                 mas[i] = rnd.Next(-100, 100);
@@ -100,13 +100,13 @@ namespace Massiv
             } // заполнение ячеек 
         }
 
-        private void ar_Click(object sender, EventArgs e) // задание
+        private void ar_Click(object sender, EventArgs e) // задание на нахождение среднего арифметического
         {
             int summ = 0;
             for (int i = 0; i < mas.Length; i++)
                 summ += mas[i];
             int mid = summ / mas.Length;
-            label2.Text = "Среднее арифметическое :" + summ.ToString();
+            label2.Text = "Среднее арифметическое :" + summ.ToString(); // вывод результата на метку
         }
     }
 }
