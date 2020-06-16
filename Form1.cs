@@ -31,6 +31,9 @@ namespace Massiv
             Form2 frm2 = new Form2();
             frm2.Show();
         }
+        //-----------------------------------------------------------------------------------
+
+
 
         private void bt1_Click(object sender, EventArgs e) // файловый ввод
         {
@@ -45,22 +48,22 @@ namespace Massiv
                     mas[i] = Convert.ToInt32(a[i]); // заполнение массива
                 }
             }
+           
             catch (FileNotFoundException)
             {
                 MessageBox.Show("Файл не найден!"); // исключение при отсутствии файла
             }
         }
+        //--------------------------------------------------------------------------------------
+
 
         private void button3_Click(object sender, EventArgs e) // очистка
         {
             for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 dataGridView1.Rows[0].Cells[i].Value = "";
             label2.Text = ""; // очистка метки
-
-
-
-
         }
+        //--------------------------------------------------------------------------------------
 
         private void button2_Click(object sender, EventArgs e) // сортировка массива
         {
@@ -68,6 +71,8 @@ namespace Massiv
             for (int i = 0; i < mas.Length; i++)
                 dataGridView1.Rows[0].Cells[i].Value = mas[i]; //заполнение ячеек
         }
+        //--------------------------------------------------------------------------------------
+
 
         private void button2_Click_1(object sender, EventArgs e) // график
         {
@@ -82,12 +87,16 @@ namespace Massiv
                 diagramma.Series[0].Points.DataBindXY(x, y); // построение графика
             }
         }
+        //-------------------------------------------------------------------------------------
+
 
         private void off_Click(object sender, EventArgs e) // завершение работы
         {
             if (MessageBox.Show("Вы уверены?", "Предупреждение", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 this.Close(); // диалоговое окно с подтверждением о закрытии программы
         }
+        //-------------------------------------------------------------------------------------
+
 
         private void rand_Click(object sender, EventArgs e) // рандомное заполнение массива
         {
@@ -99,6 +108,8 @@ namespace Massiv
                 dataGridView1.Rows[0].Cells[i].Value = mas[i];
             } // заполнение ячеек 
         }
+        //-------------------------------------------------------------------------------------
+
 
         private void ar_Click(object sender, EventArgs e) // задание на нахождение среднего арифметического
         {
